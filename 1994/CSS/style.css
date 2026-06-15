@@ -1,0 +1,339 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Chakra+Petch:wght@400;600&display=swap');
+
+:root {
+    --verde-brasil: #009b3a;
+    --amarelo-brasil: #fedf00;
+    --azul-brasil: #002776;
+    --vermelho-eua: #ce1126;
+    --fundo-pagina: #e8e8e8;
+    --fundo-container: #ffffff;
+    --texto: #1a1a1a;
+    --borda-grossa: 4px solid #000000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fundo com padrão da época */
+body {
+    background-color: var(--fundo-pagina);
+    background-image: radial-gradient(var(--azul-brasil) 1.5px, transparent 1.5px);
+    background-size: 25px 25px;
+    color: var(--texto);
+    font-family: 'Chakra Petch', sans-serif;
+    line-height: 1.7;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+/* Estilo de revista para o container */
+.container {
+    max-width: 1000px;
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--fundo-container);
+    border-left: var(--borda-grossa);
+    border-right: var(--borda-grossa);
+    box-shadow: 15px 0px 0px var(--azul-brasil);
+    padding: 50px;
+    text-align: left;
+    position: relative;
+}
+
+/* --- Botão Voltar (Estética Arcade/Revista) --- */
+.btn-voltar {
+    display: inline-block;
+    background-color: var(--amarelo-brasil);
+    color: #000;
+    font-family: 'Archivo Black', sans-serif;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 8px 20px;
+    border: var(--borda-grossa);
+    box-shadow: 5px 5px 0px var(--azul-brasil);
+    font-size: 1rem;
+    margin-bottom: 25px; /* Separa bem do H1 */
+    transition: all 0.1s linear;
+    cursor: pointer;
+}
+
+.btn-voltar:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 8px 8px 0px var(--verde-brasil);
+    background-color: var(--fundo-container);
+}
+
+.btn-voltar:active {
+    transform: translate(2px, 2px);
+    box-shadow: 3px 3px 0px var(--vermelho-eua);
+}
+
+/* Títulos brutalistas */
+h1, h2 {
+    font-family: 'Archivo Black', sans-serif;
+    text-transform: uppercase;
+}
+
+h1 {
+    color: var(--vermelho-eua);
+    font-size: 2.8rem;
+    -webkit-text-stroke: 2px #000;
+    text-shadow: 5px 5px 0px var(--amarelo-brasil);
+    margin-top: 20px;
+    margin-bottom: 30px;
+    line-height: 1.1;
+    position: relative;
+    z-index: 1;
+}
+
+h1::before {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: var(--verde-brasil);
+    border: 3px solid #000;
+    top: -15px;
+    left: -20px;
+    z-index: -1;
+    transform: rotate(15deg);
+}
+
+h2 {
+    color: var(--fundo-container);
+    font-size: 1.4rem;
+    background-color: var(--azul-brasil);
+    display: inline-block;
+    padding: 8px 20px;
+    border: var(--borda-grossa);
+    box-shadow: 6px 6px 0px var(--verde-brasil);
+    margin-bottom: 20px;
+    transform: rotate(-2deg);
+}
+
+.subtitulo {
+    transform: none;
+    background-color: transparent;
+    color: var(--texto);
+    border: none;
+    box-shadow: none;
+    font-size: 1.2rem;
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: 600;
+    text-transform: none;
+}
+
+/* Modularização Flexbox - Imagem e Texto */
+.card-personagem {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 50px;
+    align-items: center;
+}
+
+.texto-card {
+    flex: 1;
+}
+
+h3 {
+    font-size: 1.15rem;
+    font-weight: 400;
+    padding-left: 20px;
+    border-left: 6px solid var(--amarelo-brasil);
+    background-color: #f9f9f9;
+    padding: 15px 20px;
+    border: 2px solid #eee;
+    border-left: 6px solid var(--amarelo-brasil);
+}
+
+/* Imagens com efeito retrô */
+a {
+    display: inline-block;
+    transition: transform 0.1s linear;
+}
+
+.img-destaque {
+    max-width: 350px;
+    width: 100%;
+    height: auto;
+    border: var(--borda-grossa);
+    box-shadow: 10px 10px 0px var(--vermelho-eua);
+    filter: contrast(125%) saturate(110%);
+    object-fit: cover;
+}
+
+.img-bandeira {
+    max-width: 200px;
+    border: var(--borda-grossa);
+    box-shadow: 8px 8px 0px var(--verde-brasil);
+}
+
+a:hover {
+    transform: translate(-4px, -4px);
+}
+
+a:hover img {
+    box-shadow: 14px 14px 0px var(--verde-brasil);
+}
+
+/* Sessão centralizada e correção da Bandeira */
+.sessao-centralizada {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.sessao-centralizada h1 {
+    display: inline-block;
+}
+
+.container-bandeira {
+    display: block;
+    margin-top: 25px;
+}
+
+/* Separadores tipo fita de isolamento */
+hr {
+    border: none;
+    height: 12px;
+    background: repeating-linear-gradient(
+        -45deg,
+        var(--amarelo-brasil),
+        var(--amarelo-brasil) 15px,
+        #000 15px,
+        #000 30px
+    );
+    border: 3px solid #000;
+    margin: 60px 0;
+}
+
+/* Estatísticas - Placar eletrônico */
+.bloco-estatisticas {
+    margin-top: 30px;
+}
+
+.stat {
+    background-color: #222;
+    color: #00ff00;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 10px 15px;
+    border: 3px solid #000;
+    box-shadow: inset 3px 3px 10px rgba(0,0,0,0.8), 4px 4px 0px #aaa;
+    display: table; 
+    margin-bottom: 12px;
+    border-left: 3px solid #000;
+}
+
+.subtitulo-stats {
+    margin-top: 40px;
+}
+
+.curiosidade {
+    background-color: var(--amarelo-brasil);
+    color: #000;
+    border: var(--borda-grossa);
+    box-shadow: 6px 6px 0px #000;
+    transform: none;
+    display: block;
+    margin-top: 40px;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 1.1rem;
+    text-transform: none;
+}
+
+/* Responsividade (Lado a lado em Desktop) */
+@media (min-width: 768px) {
+    .card-personagem {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    
+    .img-destaque {
+        flex-shrink: 0;
+    }
+}
+
+/* --- Pop-up (Modal) para a foto do time --- */
+.cursor-zoom {
+    cursor: zoom-in;
+    transition: transform 0.2s ease;
+}
+
+.cursor-zoom:hover {
+    transform: scale(1.03);
+    box-shadow: 14px 14px 0px var(--verde-brasil);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(5px);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.modal-conteudo {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 85vh;
+    border: var(--borda-grossa);
+    box-shadow: 15px 15px 0px var(--amarelo-brasil);
+    object-fit: contain;
+    animation: zoomModal 0.3s ease;
+}
+
+.fechar {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: var(--fundo-container);
+    font-size: 50px;
+    font-weight: bold;
+    font-family: sans-serif;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.fechar:hover,
+.fechar:focus {
+    color: var(--vermelho-eua);
+    text-decoration: none;
+}
+
+@keyframes zoomModal {
+    from {transform: scale(0.8); opacity: 0;}
+    to {transform: scale(1); opacity: 1;}
+}
+
+/* --- WIDGET DO SPOTIFY --- */
+.spotify-widget {
+    position: fixed;
+    bottom: 180px; /* Aumentei de 20px para 80px para subir o embed */
+    right: 20px;
+    width: 320px;
+    z-index: 10000;
+    border: var(--borda-grossa);
+    box-shadow: 8px 8px 0px var(--verde-brasil);
+    background-color: var(--fundo-container);
+    transition: transform 0.2s ease;
+}
+
+.spotify-widget:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 11px 11px 0px var(--amarelo-brasil);
+}
