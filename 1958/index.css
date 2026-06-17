@@ -58,7 +58,7 @@ p, h3, td, li{
     background-size: 550px 250px;
     }
 
-header > a {
+header > a > button {
     position: fixed;
     top: 12px;
     left: 12px;
@@ -71,4 +71,4 @@ header > a {
     cursor: pointer;
     font-size: 16px;
 }
-header > a:active { transform: translateY(1px); }
+header > a > button:active { transform: translateY(1px); }
